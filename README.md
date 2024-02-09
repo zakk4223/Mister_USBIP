@@ -21,7 +21,7 @@ Mister's kernel has usbip compiled in by default, so we can use that to forward 
    Microsoft Corp. : unknown product (045e:02fe)
 ```
 
-4. Find the controller/input you want to forward to the remote host, remember the 'busid' In this example we'll forward the Dualshock 4, busid 1-1.6.2
+4. Find the controller/input you want to forward to the remote host, remember the 'busid'. In this example we'll forward the Dualshock 4, busid 1-1.6.2
 
 5. Run `/media/fat/linux/usbip/usbip bind --busid 1-1.6.2` (replace with the busid of your device)
 
