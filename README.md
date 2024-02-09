@@ -10,7 +10,7 @@ Mister's kernel has usbip compiled in by default, so we can use that to forward 
 
 3. Run `/media/fat/linux/usbip/usbip list -l`
 
-`  /root# /media/fat/linux/usbip/usbip list -l
+```/root# /media/fat/linux/usbip/usbip list -l
  - busid 1-1.5 (1532:0258)
    Razer USA, Ltd : unknown product (1532:0258)
 
@@ -19,7 +19,7 @@ Mister's kernel has usbip compiled in by default, so we can use that to forward 
 
  - busid 1-1.6.3 (045e:02fe)
    Microsoft Corp. : unknown product (045e:02fe)
-`
+```
 
 4. Find the controller/input you want to forward to the remote host, remember the 'busid' In this example we'll forward the Dualshock 4, busid 1-1.6.2
 
@@ -31,8 +31,8 @@ Mister's kernel has usbip compiled in by default, so we can use that to forward 
    (modprobe usbip-core; modprobe vhci-hcd)
 
 2. Run `usbip list --remote <mister hostname or ip address>`
-`
-[zakk@blkheart:~][1]$ usbip list --remote 192.168.1.161
+
+```[zakk@blkheart:~][1]$ usbip list --remote 192.168.1.161
 Exportable USB devices
 ======================
  - 192.168.1.161
@@ -43,16 +43,16 @@ Exportable USB devices
            :  1 - Audio / Streaming / unknown protocol (01/02/00)
            :  2 - Audio / Streaming / unknown protocol (01/02/00)
            :  3 - Human Interface Device / No Subclass / None (03/00/00)
-`
+```
 
 3. Now attach the usb device to our local machine. You need root privs to do this:
 `sudo usbip attach  --remote 192.168.1.161 --busid 1-1.6.2`
 
 The Dualshock 4 should now appear as a normal USB device on your PC. 
-`
+```
 [zakk@blkheart:~]$ lsusb -d 054c:09cc
 Bus 009 Device 005: ID 054c:09cc Sony Corp. DualShock 4 [CUH-ZCT2x]
-`
+```
 
 ### I want to undo this and use my controller normally on the mister!
 
